@@ -19,21 +19,29 @@ function calculateProfitAndLoss(){
      }
     else{
 
-    var costPrice = initialPrice.value* quantityOfStock.value;
-    var sellingPrice = currentPrice.value* quantityOfStock.value;
+    var costPrice = Number(initialPrice.value)* Number(quantityOfStock.value);
+    var sellingPrice = Number(currentPrice.value)* Number(quantityOfStock.value);
 
-    if(initialPrice.value<currentPrice.value){
+    if(Number(initialPrice.value)<Number(currentPrice.value)){
 
         var profit = sellingPrice - costPrice; 
+
+        console.log("p selling price"+sellingPrice)
+        console.log("p cost price "+costPrice)
+
         var profitPercentage = (profit/costPrice)*100;
         showMessage.innerText = `Hey, the profit is ${profit} and the percent is ${profitPercentage.toFixed(2)}%`
         showMessage.style.display = "block";
         showMessage.style.color = "white";
         showMessage.style.backgroundColor = "green"
     }
-    else if (initialPrice.value>currentPrice.value){
+    else if (Number(initialPrice.value)>Number(currentPrice.value)){
         var loss = costPrice  - sellingPrice ;
         var lossPercentage = (loss/costPrice)*100;
+
+        console.log("l selling price"+sellingPrice)
+        console.log("l cost price "+costPrice)
+
         showMessage.innerText = `Hey, the loss is ${loss} and the percent is ${lossPercentage.toFixed(2)}%`
         showMessage.style.display = "block";
         showMessage.style.color = "white";
