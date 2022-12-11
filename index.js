@@ -9,12 +9,17 @@ showBtn.addEventListener("click", calculateProfitAndLoss)
 
 function calculateProfitAndLoss(){
   
- if(initialPrice.value=== ""|| currentPrice.value===""|| quantityOfStock.value === ""){
+ if(initialPrice.value=== ""||  currentPrice.value==="" ||  quantityOfStock.value === ""){
     alert('Please fill out all Fields')
  }
+
+ else if(initialPrice.value<=0 || currentPrice.value<=0){
+    alert('Initial Price and Current Price should always be positive')
+ }
+
  else{
 
-    if(initialPrice.value<=0 || currentPrice.value<=0 || quantityOfStock.value <=0){
+    if( quantityOfStock.value <=0){
         alert('Quantity should be atleast One.')
      }
     else{
