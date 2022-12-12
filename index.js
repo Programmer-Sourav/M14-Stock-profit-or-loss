@@ -13,8 +13,11 @@ function calculateProfitAndLoss(){
     alert('Please fill out all Fields')
  }
 
- else if(initialPrice.value<=0 || currentPrice.value<=0){
+ else if(initialPrice.value<0 || currentPrice.value<0){
     alert('Initial Price and Current Price should always be positive')
+ }
+ else if(initialPrice.value=== "0"  || currentPrice.value=== "0"){
+    alert('Initial Price and Current Price should be atleast 1')
  }
 
  else{
